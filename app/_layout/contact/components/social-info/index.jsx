@@ -1,6 +1,9 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
+
 
 import { MagneticButton } from '@/components';
 import { socialMedias } from '@/data';
@@ -9,6 +12,28 @@ import { randomId } from '@/utils';
 import { ListTitle } from './index.styled';
 
 export function SocialInfo() {
+  const [localTime, setLocalTime] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString('pt-PT', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+      setLocalTime(timeString);
+    };
+
+    // Update immediately
+    updateTime();
+    
+    // Update every minute
+    const timer = setInterval(updateTime, 60000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const medias = socialMedias.map(({ href, title }) => {
     const id = randomId();
     return (
@@ -34,7 +59,7 @@ export function SocialInfo() {
           <div>
             <ListTitle>Local time</ListTitle>
             <p className='mt-7'>
-              <time>04:01 PM GMT+2</time>
+              <time>{localTime}</time>
             </p>
           </div>
         </div>

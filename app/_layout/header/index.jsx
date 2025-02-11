@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { MoveDownRight } from 'lucide-react';
-import { CldImage } from 'next-cloudinary';
+import Image from 'next/image';
 
 import { ParallaxSlider } from '@/components';
 
@@ -11,25 +11,27 @@ import { slideUp } from './variants';
 export function Header() {
   return (
     <motion.header
-      className='relative h-screen overflow-hidden bg-secondary-foreground text-background'
+      className='bg-secondary-foreground text-background relative h-screen overflow-hidden'
       variants={slideUp}
       initial='initial'
       animate='enter'
     >
-      <CldImage
-        src='Dennis-Portfolio/images/lapetmmek4fymz68m4u8'
+      <Image
+        src='https://jonidores.com/wp-content/uploads/2025/02/412050203_865734298568334_6425679950408963955_n-1.jpg'
         className='object-cover md:scale-125 md:object-contain'
-        fill={true}
+        fill='true'
         sizes='100vw'
-        alt='Dennis Snellenberg Personal Picture'
+        priority
+        alt='Joni Dores Personal Picture'
       />
+
 
       <div className='relative flex h-full flex-col justify-end gap-2 md:flex-col-reverse md:justify-normal'>
         <div className='select-none'>
           <h1 className='text-[max(9em,15vw)]'>
             <ParallaxSlider repeat={4} baseVelocity={2}>
               <span className='pe-12'>
-                Dennis Snellenberg
+                Joni Dores
                 <span className='spacer'>—</span>
               </span>
             </ParallaxSlider>

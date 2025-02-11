@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDownLeft } from 'lucide-react';
 import Link from 'next/link';
-import { CldImage } from 'next-cloudinary';
 
 import { MagneticButton } from '@/components';
 
@@ -19,11 +18,11 @@ export function UserDetails({ transformX }) {
       <Row>
         <div className='flex items-center gap-8'>
           <ImageWrapper>
-            <CldImage
-              src='Dennis-Portfolio/images/mqtwxh5znybowgaljrbp'
+            <img
+              src='https://jonidores.com/wp-content/uploads/2025/02/412050203_865734298568334_6425679950408963955_n-1.jpg'
               className='rounded-full object-cover'
               fill={true}
-              alt='Dennis Snellenberg Profile Picture'
+              alt='Joni Dores'
             />
           </ImageWrapper>
           <MainTitle>Let’s work</MainTitle>
@@ -38,7 +37,7 @@ export function UserDetails({ transformX }) {
 
       <Row>
         <div className='relative w-full'>
-          <div className='h-[1px] bg-muted-foreground' />
+          <div className='bg-muted-foreground h-[1px]' />
           <div className='absolute right-0 top-0 z-20 -translate-x-1/2 -translate-y-1/2'>
             <motion.div style={{ x: transformX }}>
               <Link href='/contact' passHref>
@@ -58,7 +57,7 @@ export function UserDetails({ transformX }) {
               <MagneticButton
                 variant='outline'
                 size='md'
-                className='w-full border-muted-foreground'
+                className='border-muted-foreground w-full'
               >
                 info@dennissnellenberg.com
               </MagneticButton>
@@ -69,7 +68,7 @@ export function UserDetails({ transformX }) {
               <MagneticButton
                 variant='outline'
                 size='md'
-                className='w-full border-muted-foreground'
+                className='border-muted-foreground w-full'
               >
                 +31 6 27 84 74 30
               </MagneticButton>

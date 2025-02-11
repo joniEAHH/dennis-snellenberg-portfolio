@@ -2,7 +2,7 @@ export const projectOptions = {
   first: [
     {
       type: 'image',
-      source: 'Dennis-Portfolio/images/rpmf9egswyd8563mxe9t',
+      source: 'https://jonidores.com/wp-content/uploads/2022/06/luisvaz3.jpg',
     },
     {
       type: 'video',
@@ -10,7 +10,7 @@ export const projectOptions = {
     },
     {
       type: 'image',
-      source: 'Dennis-Portfolio/images/k7bp2wbfmalpjfk3yk5q',
+      source: 'https://jonidores.com/wp-content/uploads/2022/06/luisvaz3.jpg',
     },
     {
       type: 'video',
